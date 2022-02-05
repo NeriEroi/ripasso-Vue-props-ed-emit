@@ -11,7 +11,12 @@
     @eventoReset ="fraseInApp = $event"
     />
     <ComponentDue :fraseDaApp="fraseInApp"/>
-    <ComponentTre :fraseDaApp="fraseInApp"/>
+
+    <!-- component numero tre  -->
+    <ComponentTre :fraseDaTerzoComponent="frasePerTerzoComponent"
+    @emitTerzo ="frasePerTerzoComponent = $event"/>
+    <!-- / component numero tre  -->
+
   </div>
 </template>
 
@@ -26,6 +31,7 @@ export default {
   data() {
     return {
       fraseInApp : 'Frase definita in App',
+      frasePerTerzoComponent: 'frase da app per il terzo component!'
     }
   },
   components: {

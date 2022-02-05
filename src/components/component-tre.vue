@@ -1,8 +1,9 @@
 <template>
   <div class="terzo_component">
     <h1>
-      Terzo Component : {{ fraseDaApp }}
+      Terzo Component : {{ fraseDaTerzoComponent }}
     </h1>
+    <button @click="modificaTerzo">emit solo per il terzo component</button>
   </div>
 </template>
 
@@ -14,8 +15,14 @@ export default {
       word: 'Third Component',
     }
   },
+  methods : {
+    modificaTerzo() {
+      this.fraseDaTerzoComponent = 'emit solo per terzo component!!!';
+      this.$emit('emitTerzo', this.fraseDaTerzoComponent);
+    }
+  },
   props: {
-    fraseDaApp : String,
+    fraseDaTerzoComponent : String,
   },
 }
 </script>
