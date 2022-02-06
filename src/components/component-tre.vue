@@ -3,17 +3,25 @@
     <h1>
       Terzo Component : {{ fraseDaTerzoComponent }}
     </h1>
+    <HelloWorld :frasePerHelloDaTerzoComponent="frasePerHello" @emitHello ="frasePerHello = $event"/>
     <button @click="modificaTerzo">emit solo per il terzo component</button>
+    
   </div>
 </template>
 
 <script>
+import HelloWorld from './HelloWorld.vue';
+
 export default {
   name: 'ComponentTre',
   data() {
     return {
       word: 'Third Component',
+      frasePerHello: 'frase per hello world in terzo component'
     }
+  },
+  components: {
+    HelloWorld,
   },
   methods : {
     modificaTerzo() {
@@ -22,7 +30,7 @@ export default {
     }
   },
   props: {
-    fraseDaTerzoComponent : String,
+    fraseDaTerzoComponent: String,
   },
 }
 </script>

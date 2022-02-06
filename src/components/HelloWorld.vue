@@ -1,8 +1,9 @@
 <template>
   <div class="hello">
     <h1>
-      Hello World Component
+      Hello World Component {{ frasePerHelloDaTerzoComponent }}
     </h1>
+    <button @click="modificaDaHello">EMIT HELLO</button>
   </div>
 </template>
 
@@ -10,8 +11,14 @@
 export default {
   name: 'HelloWorld',
   props: {
-    
-  }
+    frasePerHelloDaTerzoComponent: String,
+  },
+  methods: {
+    modificaDaHello() {
+      this.frasePerHelloDaTerzoComponent = 'EMIT da hello a terzo component';
+      this.$emit('emitHello', this.frasePerHelloDaTerzoComponent);
+    }
+  },
 }
 </script>
 
