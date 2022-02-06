@@ -15,7 +15,7 @@ export default {
   },
   methods: {
     modificaDaHello() {
-      this.frasePerHelloDaTerzoComponent = 'EMIT da hello a terzo component';
+      this.frasePerHelloDaTerzoComponent = 'EMIT da hello world component a terzo component';
       this.$emit('emitHello', this.frasePerHelloDaTerzoComponent);
     }
   },
